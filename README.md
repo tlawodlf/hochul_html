@@ -1,4 +1,3 @@
-# hochul_html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,16 +37,40 @@
 <script>
 function handleClick(button) {
     // 버튼의 텍스트를 가져옵니다.
-    const text = button.innerText;
+    const text = button.innerText.trim();
+    
+    // 텍스트를 변환합니다.
+    const transformedText = transformText(text);
 
     // SpeechSynthesis API를 사용하여 음성으로 텍스트를 읽어줍니다.
-    const utterance = new SpeechSynthesisUtterance(`${text} - 선생님 호출`);
+    const utterance = new SpeechSynthesisUtterance(`${transformedText} 선생님 호출입니다`);
     
     // 음성 합성 엔진의 언어 설정 (선택 사항)
     utterance.lang = 'ko-KR'; // 한국어 설정
 
     // 음성을 재생합니다.
     window.speechSynthesis.speak(utterance);
+}
+
+function transformText(text) {
+    // 텍스트를 변환하는 로직
+    const parts = text.split(' ');
+    
+    if (parts.length < 2) {
+        // 예상한 포맷이 아닐 경우
+        return text;
+    }
+
+    // "2-1" 부분을 "2 학년 1반"으로 변환
+    const gradeAndClass = parts[0].split('-');
+    const grade = gradeAndClass[0];
+    const classNum = gradeAndClass[1];
+    
+    // 나머지 부분은 이름과 T
+    const name = parts[1];
+
+    // 변환된 텍스트 반환
+    return `${grade} 학년 ${classNum}반 ${name}`;
 }
 </script>
 
