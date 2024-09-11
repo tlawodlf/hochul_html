@@ -43,7 +43,7 @@ function handleClick(button) {
     const transformedText = transformText(text);
 
     // SpeechSynthesis API를 사용하여 음성으로 텍스트를 읽어줍니다.
-    const utterance = new SpeechSynthesisUtterance(`${transformedText} 선생님`);
+    const utterance = new SpeechSynthesisUtterance(`${transformedText} 선생님 호출`);
     
     // 음성 합성 엔진의 언어 설정 (선택 사항)
     utterance.lang = 'ko-KR'; // 한국어 설정
