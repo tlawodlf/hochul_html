@@ -29,7 +29,7 @@
     <button onclick="handleClick(this)">2-9 김창옥 T</button>
     <button onclick="handleClick(this)">2-10 김정무 T</button>
     <button onclick="handleClick(this)">2-11 장혜원 T</button>
-    <button onclick="handleClick(this)">2-12 최지원 T</button>
+    <button onclick="handleClick(this)">2-12 강분정 T</button>
     <button onclick="handleClick(this)">2-13 김태형 T</button>
     <button onclick="handleClick(this)">2-14 서지희 T</button>
 </div>
